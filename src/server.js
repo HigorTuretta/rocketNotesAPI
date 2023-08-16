@@ -4,17 +4,15 @@ const routes = require("./routes");
 const AppError = require("./utils/AppError");
 const migrationsRun = require('./database/sqllite/migrations')
 const uploadConfig = require('./configs/upload');
+const cors = require('cors')
 migrationsRun()
 
 // inicia o express
 const app = express();
+app.use(cors())
 app.use(express.json()); //seta o padrão de tipo da API para JSON
 
 app.use('/files', express.static(uploadConfig.UPLOADS_FOLDER))
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
 
 app.use(routes);
 
