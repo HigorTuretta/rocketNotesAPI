@@ -3,16 +3,16 @@ const path = require('path')
 
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: 'mysql2',
     connection: {
-      filename: path.resolve(__dirname, 'src', 'database', 'database.db'), // Pegando o caminho do banco de dados
-    },
-    pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb) //Habilita o delete em CASCADE no SQLite
+      host: 'mysql.prcnotes.kinghost.net',
+      user: 'prcnotes_add1',
+      password: 'Abacaxi*5',
+      database: 'prcnotes'
     },
     migrations: {
       directory: path.resolve(__dirname, 'src','database','knex','migrations')
     },
-    useNullAsDefault: true //isso é padrão do SQLite
   },
+  // Você pode adicionar configurações para outros ambientes, como produção ou teste
 };

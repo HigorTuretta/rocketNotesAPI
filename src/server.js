@@ -37,6 +37,8 @@ const PORT = 3333;
 //inicia o servidor na porta informada
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
 
+
+
 // //Metodo GET com parametro
 // app.get("/message/:id/:user", (req, res) => {
 //     //desestruturação para pegar o id e o user diretamente de req.params
