@@ -1,14 +1,15 @@
 
 const path = require('path')
+require('dotenv').config()
 
 module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host: 'mysql.prcnotes.kinghost.net',
-      user: 'prcnotes_add1',
-      password: 'Abacaxi*5',
-      database: 'prcnotes'
+      host: process.env.DATABASE_HOST,
+      user:  process.env.DATABASE_USER,
+      password:  process.env.DATABASE_PASSWORD,
+      database:  process.env.DATABASE_DB
     },
     migrations: {
       directory: path.resolve(__dirname, 'src','database','knex','migrations')

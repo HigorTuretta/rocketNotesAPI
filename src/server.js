@@ -3,10 +3,8 @@ require("express-async-errors");
 const express = require("express");
 const routes = require("./routes");
 const AppError = require("./utils/AppError");
-const migrationsRun = require('./database/sqllite/migrations')
 const uploadConfig = require('./configs/upload');
 const cors = require('cors')
-migrationsRun()
 
 // inicia o express
 const app = express();
