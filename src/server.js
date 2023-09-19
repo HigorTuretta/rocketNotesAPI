@@ -33,7 +33,7 @@ app.use((error, req, res, nex) => {
 
 const PORT = 3333;
 //inicia o servidor na porta informada
-app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
 
 
 
